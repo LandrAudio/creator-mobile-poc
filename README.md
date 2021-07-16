@@ -1,34 +1,31 @@
-# [TypeScript Example](https://www.typescriptlang.org/)
+# SSL Setup (iOS)
 
-<p>
-  <!-- iOS -->
-  <img alt="Supports Expo iOS" longdesc="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
-  <!-- Android -->
-  <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
-  <!-- Web -->
-  <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
-</p>
+Generate a cert with `mkcert`
 
-```sh
-npx create-react-native-app -t with-typescript
+```shell
+    mkcert -install local.landr.com
 ```
 
-TypeScript is a superset of JavaScript which gives you static types and powerful tooling in Visual Studio Code including autocompletion and useful inline warnings for type errors.
+Find your `rootCA.pem`
 
-## 🚀 How to use
+```shell 
+mkcert -CAROOT
+``` 
 
-#### Creating a new project
+Drag the `rootCA.pem` to a running iOS simulator
 
-- Install the CLI: `npm i -g expo-cli`
-- Create a project: `expo init --template expo-template-blank-typescript`
-- `cd` into the project
+Go to the Settings app and then to `General -> Profile`
 
-### Adding TypeScript to existing projects
+Select your new `mkcert` profile and click install and then confirm installation
 
-- Create a blank TypeScript config: `touch tsconfig.json`
-- Run `expo start` to automatically configure TypeScript
-- Rename files to TypeScript, `.tsx` for React components and `.ts` for plain typescript files
+You can now go to `General -> About -> Certificate Trust Settings` to enable full trust for that root certificate
 
-## 📝 Notes
+# SSl Setup (Android)
 
-- [Expo TypeScript guide](https://docs.expo.io/versions/latest/guides/typescript/)
+https://support.n4l.co.nz/s/article/Installing-an-SSL-Certificate-on-an-Android-Device-Manually
+https://lpains.net/articles/2018/install-root-ca-in-android/
+
+# Update Android Host File
+
+https://www.thepolyglotdeveloper.com/2019/12/change-host-file-android-emulator/
+
