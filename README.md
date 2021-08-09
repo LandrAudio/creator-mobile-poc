@@ -1,3 +1,11 @@
+# Getting Started
+
+Run the app locally.
+
+```shell
+yarn && yarn start
+```
+
 # SSL Setup (iOS)
 
 Install `mkcert` (https://github.com/FiloSottile/mkcert) and use it to generate an SSL certificate.
