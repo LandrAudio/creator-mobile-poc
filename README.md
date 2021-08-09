@@ -1,9 +1,9 @@
 # SSL Setup (iOS)
 
-Generate a cert with `mkcert`
+Install `mkcert` (https://github.com/FiloSottile/mkcert) and use it to generate an SSL certificate.
 
 ```shell
-    mkcert -install local.landr.com
+mkcert -install local.landr.com
 ```
 
 Find your `rootCA.pem`
